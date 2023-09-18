@@ -1,0 +1,23 @@
+dark ink
+0c0636
+12 6 54
+
+deep lake
+095169
+9 81 105
+
+
+clear sea
+059b9a
+5 155 154
+
+
+morning moss
+53ba83
+83 186 131
+
+spring forest
+9fd86b
+159 216 107
+
+Playfair Display & Lato
