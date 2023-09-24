@@ -1,6 +1,3 @@
-// To dos
-// - active state of section in navigation
-
 // Get list of all sections
 
 const sectionList = Array.from(document.querySelectorAll('section'));
@@ -17,6 +14,7 @@ function buildTopMenu() {
   sectionList.forEach(e => {
     let newMenuItemTitle = e.id[0].toUpperCase() + e.id.slice(1);
     newMenuItemTitle = newMenuItemTitle.replace('-', ' ');
+    // build desktop navigation
     let newMenuItem = document.createElement('li');
     newMenuItem.setAttribute('class', 'top-menu-item');
     newMenuItem.setAttribute('id', `nav-to-${e.id}`);
@@ -25,7 +23,7 @@ function buildTopMenu() {
       document.getElementById(e.id).scrollIntoView();
     });
     topMenu.append(newMenuItem);
-
+    // build mobile navigation
     let newDropdownMenuItem = document.createElement('li');
     newDropdownMenuItem.setAttribute('class', 'top-menu-item');
     newDropdownMenuItem.setAttribute('id', `mobile-nav-to-${e.id}`);
@@ -36,8 +34,6 @@ function buildTopMenu() {
     dropdownMenu.append(newDropdownMenuItem);
     console.log(e.id);
   });
-
-  // return topMenuHTML;
 }
 
 // Highlight active element
@@ -54,6 +50,8 @@ function addOverlays() {
   }
 }
 
+// Highlight sections depending on position
+
 function highlightSection() {
   const sectionOverlays = document.getElementsByClassName('section-overlay');
   for (overlay of sectionOverlays) {
@@ -69,20 +67,6 @@ function highlightSection() {
       addHighlightMenu(overlay.id);
     }
   }
-}
-
-function addHighlightMenu(sectionId) {
-  let highlightId = sectionId.slice(0, sectionId.length - 9);
-
-  let activeSectionMenu = document.getElementById(`nav-to-${highlightId}`);
-  activeSectionMenu.classList.add('highlight');
-}
-
-function removeHighlightMenu(sectionId) {
-  let highlightId = sectionId.slice(0, sectionId.length - 9);
-  let activeSectionMenu = document.getElementById(`nav-to-${highlightId}`);
-  console.log(highlightId);
-  activeSectionMenu.classList.remove('highlight');
 }
 
 function toggleDropdownMenu() {
@@ -110,7 +94,23 @@ function hideDropdownMenu() {
   console.log('hidden');
 }
 
-// On page load
+// Highlight menu section
+
+function addHighlightMenu(sectionId) {
+  let highlightId = sectionId.slice(0, sectionId.length - 9);
+
+  let activeSectionMenu = document.getElementById(`nav-to-${highlightId}`);
+  activeSectionMenu.classList.add('highlight');
+}
+
+function removeHighlightMenu(sectionId) {
+  let highlightId = sectionId.slice(0, sectionId.length - 9);
+  let activeSectionMenu = document.getElementById(`nav-to-${highlightId}`);
+  console.log(highlightId);
+  activeSectionMenu.classList.remove('highlight');
+}
+
+// On page load / assign functionalities
 
 document.addEventListener('scroll', highlightSection);
 document

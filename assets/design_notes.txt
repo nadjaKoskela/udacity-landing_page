@@ -1,0 +1,28 @@
+Colors
+Dark ink
+#0c0636
+12 6 54
+
+Deep lake
+#095169
+9 81 105
+
+
+Clear sea
+#059b9a
+5 155 154
+
+
+Morning moss
+#53ba83
+83 186 131
+
+Spring forest
+#9fd86b
+159 216 107
+
+Darkest gray
+#2c2c2c
+
+Fonts
+Playfair Display & Lato
