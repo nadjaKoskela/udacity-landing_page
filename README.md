@@ -18,7 +18,8 @@ The landing page should...
 
 ### Files
 
-Index (html), style (css) and script (js) are all in separate files.
+Index (html), styles (css) and app (js) are all in separate files.
+CSS and JS files are in separate folders.
 Style and script are linked to from index.html.
 All assets are in a separate folder.
 
